@@ -11,11 +11,11 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table
-public class Employee {
+public class BookEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String name;
-    private String department;
+    private String title;
+    private String author;
 }
