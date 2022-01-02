@@ -19,13 +19,13 @@ public class EmployeeController {
     private EmployeeRepository employeeRepository;
 
     @PostMapping("/employees")
-    @RolesAllowed({"user", "admin"})
+    //@RolesAllowed({"user", "admin"})
     public ResponseEntity<Employee> save(@RequestBody Employee employee){
         return ResponseEntity.ok(employeeRepository.save(employee));
     }
 
     @GetMapping("/employees")
-    @RolesAllowed("admin")
+    //@RolesAllowed("admin")
     public ResponseEntity<List<Employee>> findAll(){
         return ResponseEntity.ok(employeeRepository.findAll());
     }
