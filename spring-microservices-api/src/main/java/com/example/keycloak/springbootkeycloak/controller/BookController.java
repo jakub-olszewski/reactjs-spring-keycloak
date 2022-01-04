@@ -1,6 +1,7 @@
 package com.example.keycloak.springbootkeycloak.controller;
 
-import com.example.keycloak.springbootkeycloak.model.BookEntity;
+import com.example.keycloak.springbootkeycloak.model.dto.BookDto;
+import com.example.keycloak.springbootkeycloak.model.entity.BookEntity;
 import com.example.keycloak.springbootkeycloak.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +17,8 @@ public class BookController {
 
     @PostMapping
     //@RolesAllowed({"user", "admin"})
-    public BookEntity createBook(@RequestBody BookEntity book){
-        return bookService.createBook(book);
+    public BookEntity createBook(@RequestBody BookDto bookDto){
+        return bookService.createBook(bookDto);
     }
 
     @GetMapping
